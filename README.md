@@ -337,4 +337,4 @@ Improvements and bug reports welcome!
 
 ---
 
-**DXGOC** - Production-grade Go shader compilation. Built for performance, designed for simplicity.
+**DXGOC** - Production-grade Go shader compilation.
