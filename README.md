@@ -1,10 +1,10 @@
-# GODXC - Go-Based DirectX Shader Compiler
+# DXGOC - Go-Based DirectX Shader Compiler
 
 A high-performance Go wrapper for the DirectX Shader Compiler (DXC) using pure FFI (Foreign Function Interface) with direct DLL calls. **No CGO, no C compiler required.**
 
 ## Overview
 
-GODXC is a Go application that interfaces directly with `dxcompiler.dll` via pure Go FFI syscalls. It provides the same functionality as the DXC command-line compiler but with:
+DXGOC is a Go application that interfaces directly with `dxcompiler.dll` via pure Go FFI syscalls. It provides the same functionality as the DXC command-line compiler but with:
 
 - ✅ **Pure Go FFI** - Direct Windows DLL calls via syscalls (no CGO)
 - ✅ **High Performance** - 20-25ms shader compilation
