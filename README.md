@@ -10,8 +10,6 @@ DXGOC is a Go application that interfaces directly with `dxcompiler.dll` via pur
 - ✅ **High Performance** - 20-25ms shader compilation
 - ✅ **Zero C Dependencies** - No external C libraries or compilers
 - ✅ **COM Interface** - Direct IDxcCompiler3 integration
-- ✅ **All Profiles** - vs_6_0, ps_6_0, cs_6_0, gs_6_0, hs_6_0, ds_6_0
-- ✅ **DXIL Output** - Ready for DirectX 12 pipelines
 - ✅ **DXC-Compatible** - Same command-line syntax as DXC
 
 ## Quick Start
