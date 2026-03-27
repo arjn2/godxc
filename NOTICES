@@ -1,0 +1,84 @@
+NOTICES AND ATTRIBUTION
+=======================
+
+This project interfaces with the DirectX Shader Compiler (DXC) as an external binary tool.
+
+## DirectX Shader Compiler (DXC)
+
+**Copyright:** Microsoft Corporation and LLVM Project Contributors
+**Repository:** https://github.com/microsoft/DirectXShaderCompiler
+**License:** Multiple licenses (LLVM, MIT, Microsoft)
+
+DXC is obtained separately from:
+- GitHub Releases: https://github.com/microsoft/DirectXShaderCompiler/releases
+- Vulkan SDK: https://vulkan.lunarg.com/
+- Windows SDK: https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/
+
+When redistributing, include DXC's original license files with the DXC binaries.
+
+### Important Notes
+
+1. **External Binary Only**
+   - DXC is NOT included in this repository
+   - Must be obtained separately
+   - Invoked as external process via syscalls
+
+2. **No Code Integration**
+   - No DXC source code is compiled into this project
+   - No linking against DXC libraries
+   - Minimal wrapper code (< 200 lines)
+
+3. **Licensing Isolation**
+   - DXC licenses do NOT affect DXGOC license
+   - Each component maintains separate license
+   - Users comply with both licenses independently
+
+## What This Means for Users
+
+### For Open Source Projects (MIT compatible)
+- Use DXGOC under MIT license
+- DXC licensing is separate and transparent
+- Include both LICENSE files in distribution
+
+### For Commercial Projects
+- Use DXGOC under MIT license
+- DXC usage follows its licensing terms
+- Consult DXC licenses if needed
+
+### For Redistribution
+- Include: LICENSE (DXGOC MIT)
+- Include: NOTICES (this file)
+- Obtain DXC separately with its original license files
+
+## How DXC is Used
+
+```
+Your Application
+    ↓
+DXGOC (MIT licensed)
+    ├─ FFI System (pure Go, direct syscalls)
+    └─ COM Interface to dxcompiler.dll
+        ↓
+    Direct DLL Call
+        ↓
+    dxcompiler.dll (Microsoft + LLVM licenses)
+        ↓
+    DXIL Bytecode
+```
+
+DXGOC calls DXC DLLs directly via pure Go FFI - no subprocess, no external process.
+
+## Compliance Checklist
+
+✓ DXC licensing terms NOT bundled (obtained separately)
+✓ Attribution to Microsoft and LLVM contributors maintained
+✓ DXGOC code is 100% original (MIT)
+✓ Clear separation of licensing between components
+✓ Users can comply with both licenses independently
+
+## References
+
+- DirectX Shader Compiler: https://github.com/microsoft/DirectXShaderCompiler
+- LLVM Project: https://llvm.org/
+- MIT License: https://opensource.org/licenses/MIT
+- Windows SDK: https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/
